@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import NewApp from './NewApp';
+// import App from './App';
+// import NewApp from './NewApp';
 import Poketimes from './Poketimes';
 import reportWebVitals from './reportWebVitals';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux'; 
+import rootReducer from './reducers/rootReducer';
+
+const store = createStore(rootReducer)
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <Poketimes />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
